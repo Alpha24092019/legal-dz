@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="keywords" content="{{ with .Params.keywords }}{{ delimit . ", " }}{{ else }}قانون جزائري, قوانين الجزائر, PDF, مكتبة قانونية{{ end }}">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ "images/scales.svg" | relURL }}">
+  
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <!-- شريط علوي -->
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ "/" | relURL }}" class="logo">
+        <i class="fas fa-balance-scale"></i>
+        <span>المكتبة القانونية</span>
+      </a>
+      
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="القائمة">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-list">
+          <li><a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>الرئيسية</a></li>
+          <li><a href="{{ "/blog/" | relURL }}" {{ if eq .Section "blog" }}class="active"{{ end }}>المقالات</a></li>
+          <li><a href="{{ "/library/" | relURL }}" {{ if eq .Section "library" }}class="active"{{ end }}>المكتبة</a></li>
+          <li><a href="{{ "/shop/" | relURL }}" {{ if eq .Section "shop" }}class="active"{{ end }}>متجر الكتب</a></li>
+        </ul>
+        
+        <button class="search-toggle" aria-label="بحث">
+          <i class="fas fa-search"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- نموذج البحث -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="ابحث في القوانين والمقالات..." autocomplete="off">
+      <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- تذييل -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>عن الموقع</h3>
+          <p>مكتبة قانونية شاملة للتشريعات الجزائرية مع إمكانية تحميل PDF وشراء الكتب القانونية</p>
+        </div>
+        <div class="footer-section">
+          <h3>تواصل معنا</h3>
+          <p><i class="fas fa-phone"></i> 0xxx xx xx xx</p>
+          <p><i class="fas fa-envelope"></i> contact@legal-dz.dz</p>
+        </div>
+        <div class="footer-section">
+          <h3>روابط سريعة</h3>
+          <ul>
+            <li><a href="/library/مدني/">القانون المدني</a></li>
+            <li><a href="/library/تجاري/">القانون التجاري</a></li>
+            <li><a href="/library/جرائد/">الجريدة الرسمية</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© {{ now.Year }} المكتبة القانونية الجزائرية - جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ "js/main.js" | relURL }}"></script>
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

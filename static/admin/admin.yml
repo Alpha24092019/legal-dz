@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'إضافة: {{slug}}'
+    update: 'تحديث: {{slug}}'
+    delete: 'حذف: {{slug}}'
+    uploadMedia: 'رفع صورة: {{path}}'
+    deleteMedia: 'حذف صورة: {{path}}'
+
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://legal-dz.netlify.app
+logo_url: /images/logo.png
+
+collections:
+  - name: "blog"
+    label: "المقالات"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "التاريخ", name: "date", widget: "datetime" }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - { label: "صورة المقال", name: "image", widget: "image", required: false }
+      - { label: "التصنيفات", name: "categories", widget: "list", default: ["قانون"] }
+      - { label: "الوسوم", name: "tags", widget: "list", required: false }
+      - { label: "منشور", name: "draft", widget: "boolean", default: false }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+
+  - name: "library"
+    label: "المكتبة القانونية"
+    folder: "content/library"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 3
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "التاريخ", name: "date", widget: "datetime" }
+      - { label: "سنة القانون", name: "year", widget: "number" }
+      - { label: "عدد الصفحات", name: "pages", widget: "number" }
+      - { label: "حجم الملف", name: "file_size", widget: "string" }
+      - { label: "رابط PDF", name: "pdf_url", widget: "file" }
+      - { label: "التصنيف", name: "categories", widget: "select", options: ["الدستور", "مدني", "تجاري", "عقوبات", "إجراءات", "عمالي", "جبائي", "إداري", "جرائد رسمية"] }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - { label: "منشور", name: "draft", widget: "boolean", default: false }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+
+  - name: "shop"
+    label: "متجر الكتب"
+    folder: "content/shop"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان الكتاب", name: "title", widget: "string" }
+      - { label: "السعر (دج)", name: "price", widget: "number" }
+      - { label: "صورة الكتاب", name: "image", widget: "image" }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - { label: "متوفر", name: "stock", widget: "boolean", default: true }
+      - { label: "منشور", name: "draft", widget: "boolean", default: false }
+      - { label: "تفاصيل إضافية", name: "body", widget: "markdown", required: false }
