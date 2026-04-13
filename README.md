@@ -9,7 +9,7 @@
 - 📚 **مكتبة قانونية** - تحميل القوانين بصيغة PDF
 - 🛒 **متجر الكتب** - بيع الكتب القانونية (الدفع عند الاستلام)
 
-🔗 **الموقع المباشر**: [https://legal-dz.netlify.app](https://legal-dz.netlify.app)
+🔗 **الموقع المباشر**: [https://legal.dz.netlify.app](https://legal-dz.netlify.app)
 
 ---
 
