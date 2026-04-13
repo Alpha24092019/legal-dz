@@ -1,0 +1,39 @@
+name: تحديث الجرائد الرسمية
+
+on:
+  schedule:
+    # تشغيل أسبوعياً كل يوم جمعة الساعة 2 صباحاً
+    - cron: '0 2 * * 5'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: إعداد Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: تثبيت المتطلبات
+      run: |
+        pip install -r requirements.txt
+    
+    - name: تحميل الجرائد الجديدة
+      run: |
+        python scripts/scraper.py --year $(date +%Y) --limit 5
+    
+    - name: تحديث الفهرس
+      run: |
+        python scripts/scraper.py --update-index
+    
+    - name: commit التغييرات
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add content/library/ static/pdfs/ data/
+        git commit -m "تحديث تلقائي للجرائد الرسمية - $(date +%Y-%m-%d)" || exit 0
+        git push
