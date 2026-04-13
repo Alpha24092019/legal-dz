@@ -1,0 +1,543 @@
+/* ==================== 
+   المتغيرات والإعدادات
+   ==================== */
+:root {
+  --primary-color: #1a5276;
+  --secondary-color: #2874a6;
+  --accent-color: #f39c12;
+  --text-color: #2c3e50;
+  --bg-color: #ffffff;
+  --bg-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --radius: 8px;
+  --max-width: 1200px;
+}
+
+/* ==================== 
+   إعادة الضبط
+   ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+/* ==================== 
+   الهيدر
+   ==================== */
+.site-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+/* ==================== 
+   القائمة
+   ==================== */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-list a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.mobile-menu-toggle,
+.search-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ==================== 
+   البحث
+   ==================== */
+.search-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-modal.active {
+  display: flex;
+}
+
+.search-container {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.close-search {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* ==================== 
+   المحتوى الرئيسي
+   ==================== */
+.main-content {
+  min-height: calc(100vh - 300px);
+  padding: 2rem 0;
+}
+
+/* ==================== 
+   الصفحة الرئيسية
+   ==================== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary-color);
+}
+
+/* ==================== 
+   البطاقات
+   ==================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* ==================== 
+   صفحات المكتبة
+   ==================== */
+.library-section {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.law-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.law-info h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.law-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.law-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-download {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-view {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* ==================== 
+   المتجر
+   ==================== */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  height: 250px;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.product-details {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-card form {
+  margin-top: auto;
+}
+
+/* ==================== 
+   نموذج الطلب
+   ==================== */
+.order-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ==================== 
+   المقالات
+   ==================== */
+.article-header {
+  text-align: center;
+  padding: 3rem 0;
+  background: var(--bg-light);
+  margin-bottom: 2rem;
+}
+
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.article-content h2 {
+  color: var(--primary-color);
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+}
+
+/* ==================== 
+   التذييل
+   ==================== */
+.site-footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  line-height: 2;
+}
+
+.footer-section a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+/* ==================== 
+   التجاوب
+   ==================== */
+@media (max-width: 768px) {
+  .mobile-menu-toggle,
+  .search-toggle {
+    display: block;
+  }
+  
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--primary-color);
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-list.active {
+    display: flex;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .law-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* ==================== 
+   الألوان حسب القسم
+   ==================== */
+.bg-blog { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+.bg-library { background: linear-gradient(135deg, #16a085, #1abc9c); }
+.bg-shop { background: linear-gradient(135deg, #d35400, #e67e22); }
