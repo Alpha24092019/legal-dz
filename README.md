@@ -15,7 +15,7 @@
 
 ## 📋 متطلبات النظام
 
-- [Hugo Extended](https://gohugo.io/installation/) &gt;= 0.124.0
+- [Hugo Extended](https://gohugo.io/installation/) &gt;= 0.160.1
 - [Git](https://git-scm.com/downloads)
 - [Python 3.10+](https://www.python.org/downloads/) (للسكريبتات)
 - حساب [Netlify](https://netlify.com) (مجاني)
@@ -28,5 +28,5 @@
 ### 1. استنساخ المشروع
 
 ```bash
-git clone https://github.com/KN19/legal-dz.git
+git clone https://github.com/alpha24092019/legal-dz.git
 cd legal-dz
