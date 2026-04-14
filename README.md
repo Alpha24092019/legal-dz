@@ -1,7 +1,7 @@
 # 📚 المكتبة القانونية الجزائرية
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/XXXX-XXXX-XXXX-XXXX/deploy-status)](https://app.netlify.com/sites/legal-dz/deploys)
-[![Hugo](https://img.shields.io/badge/Hugo-0.124+-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.160.1+-ff4088?logo=hugo)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 موقع إلكتروني شامل للتشريعات الجزائرية يتضمن:
