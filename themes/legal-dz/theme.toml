@@ -2,11 +2,11 @@ name = "Legal DZ"
 license = "MIT"
 licenselink = "https://github.com/KN19/legal-dz/blob/main/LICENSE"
 description = "قالب قانوني للجزائر - يدعم RTL والمكتبات والمتاجر"
-homepage = "https://github.com/KN19/legal-dz"
+homepage = "https://github.com/Alpha24092019/legal-dz"
 tags = ["legal", "rtl", "arabic", "algeria", "blog", "shop"]
 features = ["responsive", "dark-mode", "search", "pdf-viewer"]
 min_version = "0.112.0"
 
 [author]
   name = "KN19"
-  homepage = "https://github.com/KN19"
+  homepage = "https://github.com/Alpha24092019/"

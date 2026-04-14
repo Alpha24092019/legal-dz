@@ -28,5 +28,5 @@
 ### 1. استنساخ المشروع
 
 ```bash
-git clone https://github.com/KN19/legal-dz.git
+git clone https://github.com/Alpha24092019/legal-dz.git
 cd legal-dz
