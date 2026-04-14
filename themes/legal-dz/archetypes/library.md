@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-year: 2024
+year: 2026
 pages: 0
 downloads: 0
 file_size: "0 MB"
