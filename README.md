@@ -17,7 +17,7 @@
 
 - [Hugo Extended](https://gohugo.io/installation/) &gt;= 0.160.1
 - [Git](https://git-scm.com/downloads)
-- [Python 3.10+](https://www.python.org/downloads/) (للسكريبتات)
+- [Python 3.14+](https://www.python.org/downloads/) (للسكريبتات)
 - حساب [Netlify](https://netlify.com) (مجاني)
 - حساب [GitHub](https://github.com) (مجاني)
 
