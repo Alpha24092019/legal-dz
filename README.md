@@ -1,7 +1,7 @@
 # 📚 المكتبة القانونية الجزائرية
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/XXXX-XXXX-XXXX-XXXX/deploy-status)](https://app.netlify.com/sites/legal-dz/deploys)
-[![Hugo](https://img.shields.io/badge/Hugo-0.160+-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.160.1-ff4088?logo=hugo)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 موقع إلكتروني شامل للتشريعات الجزائرية يتضمن:
@@ -17,7 +17,7 @@
 
 - [Hugo Extended](https://gohugo.io/installation/) &gt;= 0.160.1
 - [Git](https://git-scm.com/downloads)
-- [Python 3.10+](https://www.python.org/downloads/) (للسكريبتات)
+- [Python 3.14+](https://www.python.org/downloads/) (للسكريبتات)
 - حساب [Netlify](https://netlify.com) (مجاني)
 - حساب [GitHub](https://github.com) (مجاني)
 
