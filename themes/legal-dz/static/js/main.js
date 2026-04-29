@@ -31,14 +31,14 @@ mobileToggle?.addEventListener('click', () => {
 let searchIndex = [];
 
 // تحميل فهرس البحث
-async function loadSearchIndex() {
+window.loadSearchIndex = async function() {
   try {
     const response = await fetch('/index.json');
-    searchIndex = await response.json();
+    window.searchIndex = await response.json();
   } catch (e) {
     console.log('Search index not loaded yet');
   }
-}
+};
 
 if (searchInput) {
   searchInput.addEventListener('input', (e) => {
@@ -54,7 +54,7 @@ if (searchInput) {
   });
 }
 
-function displayResults(results) {
+window.displayResults = function(results) {
   const container = document.getElementById('searchResults');
   if (!results.length) {
     container.innerHTML = '<p>لا توجد نتائج</p>';
@@ -67,7 +67,7 @@ function displayResults(results) {
       <p>${item.summary}</p>
     </a>
   `).join('');
-}
+};
 
 // تحميل الفهرس عند البدء
 loadSearchIndex();
